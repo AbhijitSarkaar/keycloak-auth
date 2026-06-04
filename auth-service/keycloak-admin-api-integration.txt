@@ -1,0 +1,39 @@
+
+
+
+- keycloak admin rest api integration
+    -
+    - https://www.keycloak.org/docs-api/26.6.2/rest-api/
+    -
+    - create client at keycloak
+        -
+        - client id
+        - client secret
+        - client authentication ( ON )
+        - Standard flow
+        - Service account roles ( allow client_credentials )
+    -
+    - provide roles to client at keycloak
+        -
+        - client > client name ( auth-microservice ) > service account roles > assign role > client roles > ‘view-users’ ( realm management )
+    -
+    - auth service
+        -
+        - maven dependency ( spring-boot-starter-security-oauth2-client )
+        - application.yml
+            - client_credentials grant type
+            - client id
+            - client secret
+    -
+    - authorize client ( auth service ) with keycloak server
+    -
+    - get jwt access token
+        -
+        - token uri
+    -
+    - GET /admin/realm/{realm}/users
+        -
+        - Authorization: Bearer jwt_access_token
+        - Status: 200
+    -
+
