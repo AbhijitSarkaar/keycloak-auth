@@ -3,8 +3,9 @@ package com.microservice.auth_service.payload;
 import lombok.Data;
 
 @Data
-public class UserDTO {
+public class UserRepresentationDTO {
     private String username;
-    private String password;
+    private String firstName;
+    private String lastName;
     private String email;
 }

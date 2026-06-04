@@ -1,6 +1,6 @@
 package com.microservice.auth_service.controller;
 
-import com.microservice.auth_service.payload.UserDTO;
+import com.microservice.auth_service.payload.UserRepresentationDTO;
 import com.microservice.auth_service.service.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -25,7 +25,7 @@ public class AuthController {
     }
 
     @PostMapping("/register")
-    public String register(@RequestBody UserDTO userDto) {
+    public String register(@RequestBody UserRepresentationDTO userDto) {
         return authService.register(userDto);
     }
 
